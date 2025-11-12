@@ -1,3 +1,5 @@
+import { randomUUID } from "node:crypto";
+
 export class Cartao {
   constructor(
     private id: string,
@@ -31,7 +33,7 @@ export class Cartao {
     tipo: "credito" | "debito",
     parcelas: number
   ): Cartao {
-    const id = crypto.randomUUID();
+    const id = randomUUID();
     return new Cartao(id, numeroCartao, nomeImpresso, validade, cvv, cpf, valor, tipo, parcelas, "pendente");
   }
 

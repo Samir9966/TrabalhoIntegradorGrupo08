@@ -1,3 +1,5 @@
+import { randomUUID } from "node:crypto";
+
 export class Boleto {
   constructor(
     private id: string,
@@ -22,7 +24,7 @@ export class Boleto {
     email: string,
     valor: number
   ): Boleto {
-    const id = crypto.randomUUID();
+    const id = randomUUID();
     // Gera linha digitável simulada do boleto
     const linhaDigitavel = `23790.${Math.floor(Math.random() * 10000).toString().padStart(5, "0")} ${Math.floor(Math.random() * 100000).toString().padStart(5, "0")}.${Math.floor(Math.random() * 100000).toString().padStart(6, "0")} ${Math.floor(Math.random() * 100000).toString().padStart(5, "0")}.${Math.floor(Math.random() * 100000).toString().padStart(6, "0")} 8 ${valor.toFixed(2).replace(".", "").padStart(8, "0")}`;
     

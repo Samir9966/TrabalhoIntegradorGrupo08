@@ -1,3 +1,5 @@
+import { randomUUID } from "node:crypto";
+
 export class Pix {
   constructor(
     private id: string,
@@ -11,7 +13,7 @@ export class Pix {
   }
 
   static create(valor: number): Pix {
-    const id = crypto.randomUUID();
+    const id = randomUUID();
     const codigoPix = `00020126580014br.gov.bcb.pix0136${id.replace(/-/g, "")}520400005303986540${valor.toFixed(2)}`;
     const dataExpiracao = new Date();
     dataExpiracao.setMinutes(dataExpiracao.getMinutes() + 30); // Expira em 30 minutos

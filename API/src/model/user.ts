@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs";
+import { randomUUID } from "node:crypto";
 
 export class User {
   constructor(
@@ -21,7 +21,7 @@ export class User {
     email: string,
     dataNascimento: string
   ) {
-    const id = crypto.randomUUID();
+    const id = randomUUID();
     return new User(id, nome, telefone, email, dataNascimento);
   }
 
