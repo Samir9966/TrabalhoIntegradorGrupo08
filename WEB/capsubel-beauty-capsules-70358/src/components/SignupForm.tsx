@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { User, Phone, Calendar, Gift, Mail, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const API_BASE_URL = "https://grupo08projeto20252.escolatecnicaadelia.info/api";
+const API_BASE_URL = "http://localhost:3008/api";
 
 const SignupForm = () => {
   const { toast } = useToast();

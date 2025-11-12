@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Building2, Lock, CheckCircle2, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const API_BASE_URL = "https://grupo08projeto20252.escolatecnicaadelia.info/api";
+const API_BASE_URL = "http://localhost:3008/api";
 
 interface DebitPaymentProps {
   packageData: {
