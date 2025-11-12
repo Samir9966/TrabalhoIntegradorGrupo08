@@ -4,7 +4,7 @@ import { getSharedPixService } from "../service/sharedServices";
 export function PixController() {
   const service = getSharedPixService();
 
-  app.post("/pagamentos/pix", (req, res) => {
+  app.post("/api/pagamentos/pix", (req, res) => {
     try {
       const { valor } = req.body;
       
@@ -26,7 +26,7 @@ export function PixController() {
     }
   });
 
-  app.get("/pagamentos/pix", (req, res) => {
+  app.get("/api/pagamentos/pix", (req, res) => {
     const pagamentos = service.listarPagamentosPix();
     
     const pagamentosFormatados = pagamentos.map((pix) => ({
@@ -40,7 +40,7 @@ export function PixController() {
     res.json(pagamentosFormatados);
   });
 
-  app.get("/pagamentos/pix/:id", (req, res) => {
+  app.get("/api/pagamentos/pix/:id", (req, res) => {
     try {
       const { id } = req.params;
       const pix = service.buscarPagamentoPixPorId(id);

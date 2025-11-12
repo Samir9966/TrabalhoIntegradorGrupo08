@@ -5,7 +5,7 @@ import { getSharedUserService } from "../service/sharedServices";
 export function UserController() {
   const service = getSharedUserService();
 
-  app.get("/usuarios", (req, res) => {
+  app.get("/api/usuarios", (req, res) => {
     const usuarios = service.listarUsuarios();
 
     const usuariosSemSenha = usuarios.map((usuario) => ({
@@ -19,7 +19,7 @@ export function UserController() {
     res.json(usuariosSemSenha);
   });
 
-  app.post("/usuarios", (req, res) => {
+  app.post("/api/usuarios", (req, res) => {
     try {
       const dadosUsuario = req.body;
       const novoUsuario = service.criarUsuario(dadosUsuario);
@@ -32,7 +32,7 @@ export function UserController() {
     }
   });
 
-  app.put("/usuarios/:email", (req, res) => {
+  app.put("/api/usuarios/:email", (req, res) => {
     try {
       const { email } = req.params;
       const dados = req.body;
@@ -55,7 +55,7 @@ export function UserController() {
 
   
 
-  app.get("/usuarios/buscar", (req, res) => {
+  app.get("/api/usuarios/buscar", (req, res) => {
     const { nome, idade, idadeMin, idadeMax } = req.query;
 
     // Filtro por nome (retorna lista)

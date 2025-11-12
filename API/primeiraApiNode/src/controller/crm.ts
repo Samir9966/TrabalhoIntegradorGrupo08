@@ -13,7 +13,7 @@ export function CrmController() {
   const boletoService = getSharedBoletoService();
 
   // Endpoint para estatísticas do CRM
-  app.get("/crm/stats", (req, res) => {
+  app.get("/api/crm/stats", (req, res) => {
     try {
       const usuarios = userService.listarUsuarios();
       const pagamentosCartao = cartaoService.listarPagamentosCartao();

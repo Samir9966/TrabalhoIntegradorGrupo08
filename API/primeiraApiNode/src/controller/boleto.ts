@@ -4,7 +4,7 @@ import { getSharedBoletoService } from "../service/sharedServices";
 export function BoletoController() {
   const service = getSharedBoletoService();
 
-  app.post("/pagamentos/boleto", (req, res) => {
+  app.post("/api/pagamentos/boleto", (req, res) => {
     try {
       const { cpf, nomeCompleto, email, valor } = req.body;
       
@@ -30,7 +30,7 @@ export function BoletoController() {
     }
   });
 
-  app.get("/pagamentos/boleto", (req, res) => {
+  app.get("/api/pagamentos/boleto", (req, res) => {
     const pagamentos = service.listarPagamentosBoleto();
     
     const pagamentosFormatados = pagamentos.map((boleto) => ({
@@ -47,7 +47,7 @@ export function BoletoController() {
     res.json(pagamentosFormatados);
   });
 
-  app.get("/pagamentos/boleto/:id", (req, res) => {
+  app.get("/api/pagamentos/boleto/:id", (req, res) => {
     try {
       const { id } = req.params;
       const boleto = service.buscarPagamentoBoletoPorId(id);

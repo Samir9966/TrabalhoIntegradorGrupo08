@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://grupo08projeto20252.escolatecnicaadelia.info/api";
 
 interface CrmStats {
   estatisticas: {

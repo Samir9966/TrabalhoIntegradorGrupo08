@@ -4,7 +4,7 @@ import { getSharedCartaoService } from "../service/sharedServices";
 export function CartaoController() {
   const service = getSharedCartaoService();
 
-  app.post("/pagamentos/cartao", (req, res) => {
+  app.post("/api/pagamentos/cartao", (req, res) => {
     try {
       const { numeroCartao, nomeImpresso, validade, cvv, cpf, valor, tipo, parcelas } = req.body;
       
@@ -47,7 +47,7 @@ export function CartaoController() {
     }
   });
 
-  app.get("/pagamentos/cartao", (req, res) => {
+  app.get("/api/pagamentos/cartao", (req, res) => {
     const pagamentos = service.listarPagamentosCartao();
     
     const pagamentosFormatados = pagamentos.map((cartao) => ({
@@ -66,7 +66,7 @@ export function CartaoController() {
     res.json(pagamentosFormatados);
   });
 
-  app.get("/pagamentos/cartao/:id", (req, res) => {
+  app.get("/api/pagamentos/cartao/:id", (req, res) => {
     try {
       const { id } = req.params;
       const cartao = service.buscarPagamentoCartaoPorId(id);
