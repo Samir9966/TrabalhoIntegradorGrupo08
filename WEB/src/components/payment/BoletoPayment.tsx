@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Barcode, Download, Copy, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const API_BASE_URL = "http://localhost:3008/api";
+const API_BASE_URL = "https://grupo08projeto20252.escolatecnicaadelia.info/api";
 
 interface BoletoPaymentProps {
   packageData: {
